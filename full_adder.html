@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home: Tom MacDonald | EEE Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+    <title>Projects: Full Adder</title>
+<header>
+        <div class="header-content">
+            <h1>Tom MacDonald</h1>
+            <h2>MEng Electrical & Electronic Engineering with Renewable Energy</h2>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        
+        <nav>
+            <a href="home.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a>
+            <!--
+            <a href="#"><i class="fas fa-book"></i> Blog</a>
+            <a href="#"><i class="fas fa-file-alt"></i> CV</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        -->
+        </nav>
+    </header>
+
+<!-- Title -->
+<h1 style="text-align: center;"><u><i>Project #1: Full Adder</i></u></h1>
+<div style="text-align: center;">
+<a href="PDF Reports/P1 2-Bit Full Adder.pdf" target="_blank" rel="noopener noreferrer">View PDF Report Version</a>
+</div>
+<!-- Introduction -->
+<h3 style="text-align:center;"><b><u>INTRODUCTION</u></b></h3>
+<p style="text-align: justify;">Full Adders  are used to perform binary arithmetic. As with  basic everyday arithmetic, they are a foundational 
+    building block and are present in almost all modern devices, such as Arithmetic Logic Units, Central Processing Units and Digital Signal 
+    Processors. The working principle behind Full Adders is that they handle carry-in and carry-out values correctly  when performing mathematical 
+    operations to compute large sums which would be impractical and error-prone if done manually. The focus of the project was to construct a 
+    2-Bit FA using discrete components and Resistor-Transistor Logic to display the output as an array of LEDs. This approach was chosen over 
+    the use of Integrated Circuits,  Digital Logic or prebuilt digital logic gates to gain a better understanding of circuit building and first 
+    principles electronics in action. The report will cover the theory and construction of FAs from Logic Gates. The report covers a first-hand 
+    account of the design, simulation, testing and troubleshooting of the process. Unlike a formal or well-established construction guide, the 
+    report captures the learning curve and personal practical insights through a trial-and-error approach.</p>
+ <p><b>Note:</b><i> This site has been created to act as a digital diary and log of the projects that I have completed or are 
+        currently working on. Some of the early builds rely heavily on well known, tested and accepted theory and practice, and therefore
+        much of the theory discussion will be linked to a reliable source rather than be explained within the report itself, save for some 
+        rudimentary and introductory elements.</i>
+    </p>
+<hr width="100%" color="black" size="3">
+<!-- Aim -->
+<h3 style="text-align:center;"><b><u>AIM</u></b></h3>
+<p style="text-align: justify;">The primary objective of the project was to use discrete components to construct logic gates to correctly 
+    display the binary output based on the user input. The system was required  to take two binary value inputs and display the binary output 
+    value using LEDs. Secondary aims of the project were to expand circuit construction knowledge as well as applying the theory of logic 
+    gate construction from university lectures through  manually creating logic gates and wiring them together. In the context of non-digital 
+    circuit construction, discrete components refer to single-function elements such as resistors, diodes, capacitors and transistors, unlike 
+    integrated circuits that can perform several operations within a single package.
+</p>
+<hr width="100%" color="black" size="3">
+<!-- Background and Theory -->
+<h3 style="text-align:center;"><b><u>BACKGROUND AND THEORY</u></b></h3>
+<p style="text-align: justify;">To understand what a full adder is and what it does, it is best to turn our minds to something a lot more 
+    familiar to us - basic arithmetic. Take any two single digit integers whos sum is 10 or larger. For this example, 
+    we will take 7 and 3. Commonly, we stack the values above one another and perform the addition from right to left:</p>
+<div style="text-align: center;">
+<img src="addition1.PNG" alt="chimney sum of 7 and 3 showing carry over of 1"/>
+</div>
+<p style="text-align: justify;"> We then add the values together, and obtain our answer of 10</p>
+<p style="text-align: justify;"> This time we take two 2-digit numbers, let's say 11 and 12. Following the same pattern, we stack them above one
+     another and perform the arithmetic, carrying over the values that don't 'fit' into the answer box, and so we end up with 23:</p>
+<div style="text-align: center;">
+<img src="addition2.PNG" alt="chimney sum of 11 and 12 showing carry over of 1"/>
+</div>
+<p style="text-align: justify;">Now imagine that in trying to add these, or any, values together that we were not able to carry over. This 
+    is exactly what a Full Adder sets out to do - carry over values to correctly perform binary arithmetic. Adding numbers, or 'bits' in binary
+    follows the same pattern as base-10 addition (where binary is base 2), and allows the bits to be correctly carried over to the next column 
+    to display the correct binary value (compared to its decimal counterpart). That is to say, when we add 7 (111 in binary) and 3 (011 inbinary),
+    we correctly display 1010. </p>
+<div><p style="text-align: justify;">Full Adders are the larger version of the smaller Half Adder, which is not able to use Carry-In Logic
+    for computations. To gain a better and deeper understanding of how these work, take a look through the links below: 
+</p></div>
+<p><a href="https://www.geeksforgeeks.org/digital-logic/half-adder-in-digital-logic/">Half Adder in Digital Logic </a></p>
+<p><a href="https://www.geeksforgeeks.org/digital-logic/full-adder-in-digital-logic/">Full Adder in Digital Logic</a></p>
+
+<hr width="100%" color="black" size="3">
+
+<!-- Circuit Construction -->
+<h3 style="text-align:center;"><b><u>CIRCUIT CONSTRUCTION</u></b></h3>
+
+<!-- Theory vs Practice in Circuit Design -->
+<h4><b><u>Theory vs Practice in Circuit Design</u></b></h4>
+<p style="text-align: justify;"> Engineering concerns itself with finding solutions for problems that have not been encountered before:
+    this can be on a global, or in my case an individual scale. Save for a few mandatory lab sessions building basic circuits, I hadn't 
+    attempted to build anything on this scale before.</p>
+<p style="text-align: justify;">Half and Full Adders are built as a combinational logic circuit, and thus use logic gates which are 
+    built using transistors. Transistors themselves are used either as a switch or an amplifier, and in the case of this project, they
+    were used as switches. The construction of the transistors lead to them operating under specific circumstances known as logic gates. 
+    The most basic of them are AND, OR & NOT. Half/Full Adders also utilise the XOR gate to operate correctly.
+    (<a href="https://www.geeksforgeeks.org/physics/logic-gates/">Logic Gates</a>)</p>
+<p style="text-align: justify;"><b>IN THEORY:</b> The best way to build a Full Adder based on the fewest amount of logic gates is as follows:</p>
+<div style="text-align: center;">
+<img class="center" src="Full_Adder_Ideal.jpg" alt="chimney sum of 11 and 12 showing carry over of 1" style="width:640px;height:360px;"/>
+</div>
+<p style="text-align: justify;"><b>IN PRACTICE:</b> The easiest way to construct a Full Adder is by using NAND gates as shown:</p>
+<div style="text-align: center;">
+<img class="center" src="Full_Adder_NAND.jpg" alt="chimney sum of 11 and 12 showing carry over of 1" style="width:640px;height:360px;"/>
+</div>
+<p style="text-align: justify;"><b><u>Why?</u></b> Beacuse NAND gates require just 2 transistors, whereas building an effective XOR gate
+requires a minimum of 6. As seen in <a href="https://www.gsnetwork.com/full-adder/">this example,</a> we actually require less parts to 
+make the Full Adder with just NAND's than with "ideal" circuit construction</p>
+<h4><b><u>Circuit Components</u></b></h4>
+<p style="text-align: justify;">RTL requires very few components in reality, but some good practice techniques were employed, which will be explained
+    later on with the build description. Parts used for this project were:</p>
+<ul>
+  <li><i>5V Power Unit</i></li>
+  <li><i>9V Battery</i></li>
+  <li><i>Half Sized Breadboard</i></li>
+  <li><i>Full Sized Breadboard</i></li>
+  <li><i>S8050 BJT NPN Transistors</i></li>
+  <li><i>LED's (Various Colours)</i></li>
+  <li><i>Push Buttons</i></li>
+  <li><i>Wire (Various Lengths)</i></li>
+  <li><i>Toggle Switch</i></li>
+  <li><i>1k Ohm Resistors</i></li>
+  <li><i>2.2k Ohm Resistors</i></li>
+</ul>
+
+<h4><b><u>Building and Testing</u></b></h4>
+<p style="text-align: justify;">Admittedly, this took a lot longer than I would have liked it too. Firstly, there was the part where I tried 
+    to brute force the build using the "ideal" schematic, which ultimately came to a be a failure.</p>
+<div style="text-align: center;">
+  <img src="Circuit1.jpg" style="width:320px;height:180px;" alt="...">
+  <img src="Circuit2.jpg" style="width:320px;height:180px;" alt="...">
+  <img src="Circuit3.png" style="width:320px;height:180px;" alt="...">
+</div>
+<p style="text-align: justify;">The leftmost image shows the XOR Gate made the ideal way. The rightmost image was where I was using LED's to 
+    track the output of each section of the first attempt of the Full Adder to see what was and wasn't working. This is what I was rerferring 
+    to when I mentioned 'best practice techniques'. You don't necessarily need to have LED's at all points, but it's useful to implement during 
+    the build to catch anything that might be incorrect or broken along the way. ultimately, this method turned out not to work, due to how 
+    current travels through the circuit and needing extra transistors in the mix that didn't quite make sense to me, so the intuition to make
+    adjustments and alterations wasn't there for me. The middle image is how I was tracking what each gate output was doing and where is was going
+    next, which marries up with the image on the right.
+</p>
+
+<p style="text-align: justify;">I want to take you through the images that show why having the LED's in place helped with troubleshooting
+    and to further show you how far I managed to get before changing the design:</p>
+
+<p style="text-align: center;"><b><u>Case 1</u></b></p>
+<div style="text-align: center;">
+<img class="center" src="FA_Blue.png" alt="Full Adder Attempt 1 Image 1" style="width:640px;height:420px;"/>
+</div>
+<p style="text-align: justify;">The leftmost buttons that we saw on the breadboard act as the A/B inputs to the circuit. When either 
+    one of them is at a logical high (pressed to send current throught the path), the blue LED would light up. This is part of the'XOR1' 
+    construction.
+</p>
+
+<p style="text-align: center;"><b><u>Case 2</u></b></p>
+<div style="text-align: center;">
+<img class="center" src="FA_Green.png" alt="Full Adder Attempt 1 Image 2" style="width:640px;height:420px;"/>
+</div>
+<p style="text-align: justify;">The Green button would only light up when both A and B were at a logical high, forming the 'AND1' element.
+</p>
+
+<p style="text-align: center;"><b><u>Case 3</u></b></p>
+<div style="text-align: center;">
+<img class="center" src="FA_Yellow.png" alt="Full Adder Attempt 1 Image 3" style="width:640px;height:420px;"/>
+</div>
+<p style="text-align: justify;">The button that can be seen hidden under the wires on the right hand side of the breadboard acts as the 
+    Carry-In element to the Full Adder, and thus the yellow LED is lit when it is at a logical high. From here, we consider what happens
+    with the rest of the circuit when a combination of these 3 occurs. Remember that a Full Adder only has 3 inputs, and so the output 
+    depends on the combination of these
+</p>
+
+
+<p style="text-align: center;"><b><u>Case 4</u></b></p>
+<div style="text-align: center;">
+<img class="center" src="FA_Green_Yellow.png" alt="Full Adder Attempt 1 Image 4" style="width:640px;height:420px;"/>
+</div>
+
+
+<p style="text-align: center;"><b><u>Case 5</u></b></p>
+<div style="text-align: center;">
+<img class="center" src="FA_Yellow_Blue_Red.png" alt="Full Adder Attempt 1 Image 5" style="width:640px;height:420px;"/>
+</div>
+
+
+   
+<p>I turned to using <a href="https://www.falstad.com/circuit/">Falstad</a> to simulate the ideal and NAND style circuits, mainly to get a 
+    better understanding of the current flow and how I would relate this to building it on the breadboard itself.</p>
+<div style="text-align: center;">
+<img class="center" src="Falstad_2_Bit_Add_Subtract.PNG" alt="Schematic of 2-Bit NAND Full Adder" style="width:640px;height:360px;"/>
+</div>
+
+
+
+<p style="text-align: justify;">It's here that I started to see a lot of progress, and in the end, combining this with the GSN schematic, I 
+    managed to build 90% of the circuit in about 30 minutes. It's here that I should therefore stress the importance of not just diving into 
+    things and making sure you have a solid plan before attempting anything. There is a method to follow for a reason. A schematic can help to 
+    quickly draft out the rough idea for a circuit - what parts do we need? How many of them do we need? What do they need to do? How does that 
+    affect other parts of the circuit? And so on. The simulation is then the next best way to get the idea working and understand how to optimise
+    what it is that you have in mind (optimisation is so important. I think I have about 3 of 4 modules across the next few years based on this
+    principle within different areas, including a mandatory module scarily titled "Mathematical Optimisation"). My Dad used to remind me 
+    of the 5 P's:</p>
+
+<p style="text-align: center;"><i><b>P</b>rior <b>P</b>reperation <b>P</b>revents <b>P</b>oor <b>P</b>erformance</i></p>
+
+<p style="text-align: center;">And with that said, the prep that I was supposed to do at the beginning now completed 2 weeks later, 
+    I was able to create a nearly fully functional 2-Bit Full Adder.</p>
+<div style="text-align: center;">
+<img class="center" src="FullAdderComplete.jpg" alt="2-Bit NAND Full Adder" style="width:700px;height:400px;"/>
+</div>
+
+<p style="text-align:justify;">Let's take a bit of a closer look at the way this was built and constructed. I initially used the Raspberry Pi 
+    as my power source and simply run 3.3 volts to the power rails of the breadboard and to the ground of the Pico. After doing some further 
+    research  about certain components within the circuit mainly the LED’s, I found that there was quite a large voltage drop across them 
+    compared to what was being supplied to the circuit itself. It does depend on the colour of them, but on  average you're talking between 
+    2V – 2.2V drop across them. This would leave virtually no voltage to go through the rest of the circuit. With that said I eventually 
+    swapped to using the 5V power supply from the Pico where I then encountered my second problem which was due in part to over engineering 
+    the circuit with too many resistors into the bases of the transistors, but I was drawing too much current from the and started melting 
+    the breadboard at one point. Now if we think about this purely from a first principles perspective of using Ohm's Law, we might be 
+    wondering why we were drawing a lot of current despite there being a low voltage source. There is only a specific amount of voltage 
+    going into the circuit, but each component will have a certain internal resistance if it is not in and of itself a resistor as well 
+    as a specific potential difference across it as well which would dictate the current that flows through that component. So given that 
+    I had around 50 transistors in the circuit as well as LED's and wires and basically every other component that requires voltage and has 
+    a resistance the amount of current that the circuit requires to work is a lot higher than what the power source can provide.</p>
+
+<p style="text-align:justify;">Eventually I swapped out the Raspberry Pi for a power supply unit and attached a 9 Volt battery which solved 
+    the issue almost instantly. I also removed some resistors which reduced the power dissipation across certain components as well as removing 
+    some of the initial LED’s that were in the circuit.</p>
+
+<p style="text-align: justify;">Eventually, after a few weeks I had a fully functioning, all analogue logic gate based Full Adder able to 
+    sum numbers to a whopping value of... 7. Baby steps, folks.
+</p>
+
+
+</p>
+
+<hr width="100%" size="3">
+
+<h3 style="text-align:center;"><b><u>CALL TO ACTION</u></b></h3>
+<p style="text-align: justify;">Going forward I would like to make a couple of additions to this to increase the complexity and 
+    capabilities of the Adder – which essentially will become a small, integer limited calculator: </p>
+<ul>
+    <li><i>Iclude the ability to subtract</i></li>
+    <li><i>Include the ability to multiply by 2</i></li>
+    <li><i>Include the ability to divide by 2</i></li>
+    <li><i>Include the ability to show decimal values</i></li>
+    <li><i>Include a third or fourth bit</i></li>
+    <li><i>Include SR or T latches for more simplistic operation</i></li>
+    
+</ul>
+<p style="text-align: justify ;">How complex do I think this will be and what sort of timeframe should I expect vs how long I will take? </p>
+<p style="text-align: justify;"><b>Include the ability to subtract: </b> a full subtractor utilises NOT gates to invert the incoming borrow
+    (Carry-In) or B signal (a term called one's compliment), which in terms of designing around NAND gates involves simply moving a single 
+    wire from the output to the input side from a single NAND. A switch would be the best way to do this, but that would only work for one 
+    Full Adder - add in several Adders and that's a lot of switches that you have to remember to toggle every time you want to change mode. 
+    For the time being, it's not something that I will think about to much until it comes to that point - I also want to add other functions, 
+    which would become even more complicated</p>
+</p>
+<p style="text-align: justify;"><b>Add a third or fourth bit: </b>I have the blueprint for the Full Adder itself now, so it is just a copy 
+    and past situation which should take no more than 30 minutes</p>
+<p style="text-align: justify;"><b>Include the ability to multiply by 2: </b>to multiply by 2 in binary, it is a case of shifting the value 
+    to the left, so for example 001 becomes 010, 011 becomes 110 and so on. I would hopefully expect this to take not too long. With some 
+    preliminary simulations and smaller tests, I would ideally like to take only an hour</p>
+<p style="text-align: justify;"><b>Include the ability to divide by 2: </b>This is the inverse of the above, where bits are shifted to the 
+    right, so 110 becomes 011, 010 becomes 001 and so forth. If I can solve the multiplication, then division should be relatively simple as 
+    well and I would already have a blueprint for it, so I’ll be conservative and estimate 30 minutes</p>
+<p style="text-align: justify;"><b>Include the ability to show decimal values: </b>This isn’t something that I have been taught yet, and 
+    seeing as I would want to try and make these additions come the new semester, it would involve a bit more of a deeper dive. I would 
+    give myself 1.5 to 2 hours for the research, simulation, small scale construction and implementation. </p>
+<p style="text-align: justify;"><b>Include SR or T latches for more simplistic operation: </b> holding onto the buttons that you want for a 
+    high signal is already impractical with 2 bits, so in adding in more bits it would become impossible. Mechanical switches are possible, but 
+    there are lessons to be learned in implementing these latches - maybe it is worth going over these at some other point, but they already 
+    can be created using NAND gates, so there is already some knowledge there</p>
+<p style="text-align: justify;">Altogether, that comes to 5/6+ hours in the worst-case scenario. I will keep a log of this come the time to 
+    start adding these elements in. </p>
+
+
+<hr width="100%" size="3">
+
+
+
+<h3 style="text-align:center;"><b><u>ROUNDING OFF AND AFTERTHOUGHTS</u></b></h3>
+<p style="text-align: justify;">Regardless of the size of any project you should always be able to take away something from it no matter 
+    how invaluable it may seem and for me this project was definitely an eye opener to what I should expect going forward. It can sometimes 
+    be hard to know how to start a project which is where the learning curve comes from in the first place</p>
+<p style="text-align: justify;">I think the biggest thing I have learnt from this is how to destroy the largest number of transistors 
+    in the shortest amount of time possible. There are some other handy things I have learned:</p>
+<ul>
+    <li><i>Make sure that you have everything that you need before you start the project. The requirement for me to purchase more batteries 
+         transistors set me back a few days. For a personal project like this it doesn't really matter too much but there may be instances in 
+         the future where I do have a time constraint and should make sure that I'm prepared beforehand</i></li>
+    <li><i>No matter how much you think you know about project, make sure to do some research beforehand. Information, parts & best practises 
+        can change, and when you're new to doing things it's always best to make sure you're as familiar as possible</i></li>
+</ul>
+<p style="text-align: justify;">These are learning points on a more personal level whereas the technical knowledge and understanding has a 
+    few other points. One thing that particularly surprised me and made me curious was the absence of resistors into the base of every single 
+    transistor. The global science network schematics and construction showed that it was possible to wire the output of one part of a NAND 
+    straight to the base of another transistor. My general understanding was that resistors are required at the bases of transistors to limit 
+    the current and not overload them, however after some research it seems that if the transistor output is saturated then the voltage and 
+    current would be low enough to not overload the next stage. Generally this isn't a good idea but for small and low-level circuitry it's 
+    completely fine as long as you're not excessively overloading any part of the system.</p>
+
+<ul>
+    <li><i><b>Project planning: </b>brute force is not always the best options, unless you know exactly what to do and how to fix problems 
+    along the way. Using ‘perfect’ techniques like simulations can give you a good initial boost.</i></li>
+    <li><i><b>Theory vs Practice in circuit construction: </b>What works on paper may require adjustments and alterations in real life. 
+        There may always be another, easier way to do things</i></li>
+    <li><i><b>Intra Troubleshooting techniques: </b>Putting checks in place during the build to help keep you on track can save hours of 
+        work later down the line</i></li>
+</ul>
+
+<p style="text-align: justify;">Overall, I would say that the project was a success from the richness and the quality of the information 
+    and knowledge that I gained throughout the process.  As mentioned in the beginning, my aim was to create an <i>analogue</i> Full Adder,  
+    which is always going to be a lot more difficult than just using integrated chips to complete the task, Otherwise I could have completed 
+    the project in a smaller time frame using less parts and be able to carry out much more complex arithmetic than what I am currently able 
+    to do. However, I wanted to set myself the challenge to learn along the way  - that's not to say that using integrated circuits is a bad 
+    thing but I think there's something to be learned from going from first principles to complete these types of experiments.</p>
+<p style="text-align: justify;">Going forward I would like to make a couple of additions to this. I would like to be able to add in the 
+    ability to switch to division and multiplication mode, starting with dividing and multiplying by two which is the easiest thing to do 
+    with the circuit (shift the bits left or right), but then also continue to divide or multiply quite different values. So far, my theory 
+    hasn't taken me into looking at the decimal range which I'm hoping is a lot easier the more I think it's going to be, but that can all be 
+    left for another day.</p>
+
+<hr width="100%" color="black" size="3">
+
+
+<!-- Q&A SECTION -->
+
+<h2>Q&A – Full Adder Project</h2>
+<p><i>No questions yet - ask one below!</i></p>
+
+<!-- <div class="accordion">
+  <div class="accordion-header">What is a Full Adder?</div>
+  <div class="accordion-body">
+    A full adder is a digital circuit that performs addition of three binary bits: two significant bits and a carry-in. It produces a sum and a carry-out.
+  </div>
+</div>
+-->
+
+
+<!-- Add more Q&A entries here -->
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const acc = header.parentElement;
+      acc.classList.toggle('active');
+    });
+  });
+</script>
+
+<!-- Question Submission Form -->
+<section id="question-form" style="margin-top: 50px;">
+  <h2>Ask a Question</h2>
+  <p>Have a question about this project? Submit it below and I'll try to answer it in the Q&A section soon.</p>
+<div style="text-align: center;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_y7bH4UWJJJrbz1ACN82H1sM6KduR08-5qIy-4rEO3WwsAQ/viewform?embedded=true" 
+width="1280" height="600" frameborder="0" marginheight="0" marginwidth="0">
+Loading…
+</iframe>
+</div>
+</section>
+
+    </body>
+    </html>
+
+    </body>
+
+</html>
